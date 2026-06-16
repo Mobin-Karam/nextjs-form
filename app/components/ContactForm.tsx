@@ -180,16 +180,16 @@ export default function ContactForm() {
           />
 
           {/* DONATION */}
-          <input
+          {/* <input
             type="number"
             placeholder="حمایت مالی (حداقل 10000)"
             className="w-full p-3 rounded-xl border border-border"
             value={donation}
             onChange={(e) => setDonation(Number(e.target.value))}
-          />
+          /> */}
 
           {/* PAYMENT */}
-          <button
+          {/* <button
             type="button"
             onClick={payDonation}
             disabled={!canPay}
@@ -198,7 +198,7 @@ export default function ContactForm() {
             }`}
           >
             {payLoading ? "در حال پردازش..." : "پرداخت / حمایت مالی"}
-          </button>
+          </button> */}
 
           {/* SUBMIT */}
           <button
