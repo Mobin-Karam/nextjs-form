@@ -8,7 +8,7 @@ A modern, reusable contact form system built with **Next.js**, **Zod validation*
 
 - ⚡ Built with Next.js App Router
 - 🧠 Schema validation using Zod
-- 🔌 Plugin system (Email / Telegram / API webhooks)
+- 🔌 Plugin system (Email / Bale(lik Telegram) / API webhooks)
 - 📩 Easy integration in any project
 - 💰 Optional donation/payment support
 - 📦 Fully reusable as a component or npm package
