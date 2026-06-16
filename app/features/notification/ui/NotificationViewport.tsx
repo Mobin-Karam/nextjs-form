@@ -11,7 +11,7 @@ export default function NotificationViewport() {
 
   return (
     <div
-      className="fixed top-4 left-4 z-[9999] w-80"
+      className="fixed top-4 left-4 z-9999 w-80"
       onClick={() => setExpanded((v) => !v)}
     >
       <AnimatePresence>
