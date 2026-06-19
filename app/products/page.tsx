@@ -28,13 +28,13 @@ export default function ProductsPage() {
       {/* ---------------- PRODUCT LIST ---------------- */}
       <section className="px-5 sm:px-8 pt-14 pb-10">
         <div className="max-w-4xl mx-auto">
-          <p className="font-mono-ui text-xs text-[var(--brass-bright)] mb-3 tracking-wide">
+          <p className="font-mono-ui text-xs text-text mb-3 tracking-wide">
             خدمات و محصولات
           </p>
-          <h1 className="text-2xl sm:text-4xl font-bold text-[var(--text-on-ink)] mb-3">
+          <h1 className="text-2xl sm:text-4xl font-bold text-text mb-3">
             یه خدمت رو انتخاب کن، بقیه‌ش با من
           </h1>
-          <p className="text-[var(--muted-on-ink)] text-sm sm:text-base leading-7 max-w-2xl mb-10">
+          <p className="text-muted text-sm sm:text-base leading-7 max-w-2xl mb-10">
             هر کدوم از این چهار مسیر، بسته به نیاز فروشگاه یا برندت طراحی
             شدن. روی «انتخاب این خدمت» بزن تا فرم تماس با جزئیات همون خدمت
             براِت باز بشه.
@@ -56,7 +56,7 @@ export default function ProductsPage() {
       {/* ---------------- CONTACT FORM ---------------- */}
       <section
         id="contact"
-        className="px-5 sm:px-8 py-16 border-t border-[var(--border-on-ink)] bg-[var(--ink-soft)]"
+        className="px-5 sm:px-8 py-16 border-t border-border bg-bg"
       >
         <ContactForm
           selectedProductId={selectedId}

@@ -33,7 +33,7 @@ BALE_CHAT_ID=*****
 Clone the project:
 
 ```bash
-git clone https://github.com/yourname/contact-form
+git clone https://github.com/Mobin-Karam/contact-form
 cd contact-form
 npm install
 ```
