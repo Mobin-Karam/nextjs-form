@@ -48,7 +48,7 @@ export function ProjectCard({ project }: { project: Project }) {
           </div>
 
           {/* ACTIONS */}
-          <div className="mt-auto flex gap-2">
+          <div className="mt-auto flex gap-2 flex-col">
             <Button asChild variant="outline" className="w-full">
               <a
                 href={project.github}

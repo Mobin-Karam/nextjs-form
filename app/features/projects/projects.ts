@@ -10,20 +10,12 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    name: "AI Dashboard",
-    description: "Analytics dashboard powered by AI insights.",
-    stack: ["Next.js", "Tailwind", "OpenAI"],
-    author: "John Doe",
+    name: "Tea Flower Shop",
+    description: "فروشگاه گل محمدی ارتباط از طریق ارسال پیام در بله.",
+    stack: ["Next.js", "Tailwind", "Server Action", "Shadcn", "FramerMotion"],
+    author: "Mobin Karam",
     image: "/projects/p1.png",
-    github: "https://github.com/user/ai-dashboard",
-    demo: "https://demo.com",
-  },
-  {
-    name: "E-Commerce Platform",
-    description: "Full-stack e-commerce with payments.",
-    stack: ["Next.js", "Stripe", "Prisma"],
-    author: "John Doe",
-    image: "/projects/p2.png",
-    github: "https://github.com/user/shop",
+    github: "https://github.com/Mobin-Karam/flower-shop",
+    demo: "https://gulify.vercel.app",
   },
 ]
