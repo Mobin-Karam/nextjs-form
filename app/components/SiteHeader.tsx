@@ -28,6 +28,13 @@ export default function SiteHeader() {
             className="px-3 py-2 text-sm text-muted hover:text-text transition-colors"
           >
             خدمات
+          
+          </Link>
+          <Link
+            href="/projects"
+            className="px-3 py-2 text-sm text-muted hover:text-text transition-colors"
+          >
+            پروژه ها
           </Link>
 
           <span className="w-px h-5 bg-border mx-1 sm:mx-2" />
