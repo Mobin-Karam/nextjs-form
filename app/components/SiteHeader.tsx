@@ -2,37 +2,35 @@ import Link from "next/link";
 
 export default function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-md bg-surface/80 border-b border-border">
+    <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="max-w-5xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
-
         {/* Brand */}
         <Link
           href="/"
-          className="font-bold text-lg tracking-tight text-text hover:text-accent transition-colors"
+          className="font-bold text-lg tracking-tight text-foreground hover:text-primary transition-colors"
         >
           مبین کرم
         </Link>
 
         {/* Nav */}
         <nav className="flex items-center gap-1 sm:gap-2">
-
           <Link
             href="/"
-            className="px-3 py-2 text-sm text-muted hover:text-text transition-colors"
+            className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             خانه
           </Link>
 
           <Link
             href="/products"
-            className="px-3 py-2 text-sm text-muted hover:text-text transition-colors"
+            className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             خدمات
-          
           </Link>
+
           <Link
             href="/projects"
-            className="px-3 py-2 text-sm text-muted hover:text-text transition-colors"
+            className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             پروژه ها
           </Link>
@@ -45,7 +43,7 @@ export default function SiteHeader() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="گیت‌هاب"
-            className="p-2 text-muted hover:text-accent transition-colors"
+            className="p-2 text-muted-foreground hover:text-primary transition-colors"
           >
             <svg
               width="18"
@@ -64,7 +62,7 @@ export default function SiteHeader() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="لینکدین"
-            className="p-2 text-muted hover:text-accent transition-colors"
+            className="p-2 text-muted-foreground hover:text-primary transition-colors"
           >
             <svg
               width="18"
@@ -76,7 +74,6 @@ export default function SiteHeader() {
               <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z" />
             </svg>
           </a>
-
         </nav>
       </div>
     </header>

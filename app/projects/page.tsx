@@ -1,55 +1,85 @@
-"use client"
+"use client";
 
-import { ProjectFilters } from "@/features/projects/ProjectFilters"
-import { ProjectGrid } from "@/features/projects/ProjectGrid"
-import { projects } from "@/features/projects/projects"
-import { ProjectSearch } from "@/features/projects/ProjectSearch"
-import { useMemo, useState } from "react"
+import { useMemo, useState } from "react";
+import { projects } from "@/features/projects/projects";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { ProjectGrid } from "@/features/projects/ProjectGrid";
 
 export default function ProjectsPage() {
-  const [search, setSearch] = useState("")
-  const [filter, setFilter] = useState("all")
+  const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState("all");
 
-  // get all stacks
-  const allStacks = useMemo(() => {
-    return Array.from(new Set(projects.flatMap((p) => p.stack)))
-  }, [])
+  const allStacks = useMemo(
+    () => Array.from(new Set(projects.flatMap((p) => p.stack))),
+    [],
+  );
 
   const filtered = useMemo(() => {
     return projects.filter((p) => {
-      const matchesSearch =
-        p.name.toLowerCase().includes(search.toLowerCase())
+      const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase());
 
-      const matchesFilter =
-        filter === "all" || p.stack.includes(filter)
+      const matchesFilter = filter === "all" || p.stack.includes(filter);
 
-      return matchesSearch && matchesFilter
-    })
-  }, [search, filter])
+      return matchesSearch && matchesFilter;
+    });
+  }, [search, filter]);
 
   return (
-    <main className="container mx-auto py-10 space-y-6">
-
+    <main dir="rtl" className="container mx-auto py-10 space-y-6">
       <div>
-        <h1 className="text-3xl font-bold">Projects</h1>
-        <p className="text-muted-foreground">
-          My work and experiments
-        </p>
+        <h1 className="text-3xl font-bold">پروژه‌ها</h1>
       </div>
 
-      {/* Search */}
-      <ProjectSearch value={search} onChange={setSearch} />
+      <Card>
+        <CardContent className="space-y-4 p-4">
+          <Input
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="جستجو..."
+          />
 
-      {/* Filters */}
-      <ProjectFilters
-        stacks={allStacks}
-        active={filter}
-        onChange={setFilter}
-      />
+          <Select value={filter} onValueChange={setFilter}>
+            <SelectTrigger>
+              <SelectValue placeholder="فیلتر" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">همه</SelectItem>
+              {allStacks.map((s) => (
+                <SelectItem key={s} value={s}>
+                  {s}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
 
-      {/* Grid */}
-      <ProjectGrid projects={filtered} />
+          <Button
+            onClick={() => {
+              setSearch("");
+              setFilter("all");
+            }}
+          >
+            پاک‌سازی
+          </Button>
 
+          <div className="text-sm">{filtered.length} پروژه</div>
+        </CardContent>
+      </Card>
+
+      {filtered.length ? (
+        <ProjectGrid projects={filtered} />
+      ) : (
+        <p>پروژه‌ای پیدا نشد</p>
+      )}
     </main>
-  )
+  );
 }

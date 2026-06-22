@@ -42,19 +42,26 @@ export default function ToastHost() {
           key={t.id}
           role="status"
           className={`flex items-start gap-2 rounded-xl px-4 py-3 text-sm shadow-md border backdrop-blur-md transition-all animate-[fadeIn_0.2s_ease-out]
+            
             ${
               t.type === "success"
-                ? "bg-success/10 text-text border-success/20"
+                ? "bg-green-500/10 text-foreground border-green-500/20"
                 : t.type === "error"
-                  ? "bg-error/10 text-text border-error/20"
-                  : "bg-surface text-text border-border"
+                  ? "bg-destructive/10 text-foreground border-destructive/20"
+                  : "bg-card text-foreground border-border"
             }`}
         >
           {/* ICON */}
           <div className="mt-0.5">
-            {t.type === "success" && <span className="text-success">✓</span>}
-            {t.type === "error" && <span className="text-error">!</span>}
-            {t.type === "info" && <span className="text-muted">•</span>}
+            {t.type === "success" && (
+              <span className="text-green-600 font-bold">✓</span>
+            )}
+            {t.type === "error" && (
+              <span className="text-destructive font-bold">!</span>
+            )}
+            {t.type === "info" && (
+              <span className="text-muted-foreground">•</span>
+            )}
           </div>
 
           {/* MESSAGE */}

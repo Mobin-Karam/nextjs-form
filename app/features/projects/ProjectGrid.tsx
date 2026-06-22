@@ -1,5 +1,7 @@
-import { Project } from "@/lib/projects"
-import { ProjectCard } from "./ProjectCard"
+"use client";
+
+import { ProjectCard } from "./ProjectCard";
+import { Project } from "./projects";
 
 export function ProjectGrid({ projects }: { projects: Project[] }) {
   return (
@@ -8,5 +10,5 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
         <ProjectCard key={p.name} project={p} />
       ))}
     </div>
-  )
+  );
 }

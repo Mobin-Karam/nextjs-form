@@ -3,8 +3,10 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import { cn } from "@/lib/utils";
+import SiteHeader from "./components/SiteHeader";
+import ToastHost from "./components/ToastHost";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -82,8 +84,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://mobinkaram.ir",
-    title:
-      "مبین کرم | توسعه‌دهنده وب و طراح محصول دیجیتال (Iran Freelancer)",
+    title: "مبین کرم | توسعه‌دهنده وب و طراح محصول دیجیتال (Iran Freelancer)",
     description:
       "توسعه‌دهنده وب، متخصص Web App و PWA و طراح UX/UI. فریلنسر فعال در ایران و پروژه‌های ریموت.",
     siteName: "Mobin Karam Portfolio",
@@ -100,8 +101,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title:
-      "مبین کرم | Web Developer & UX/UI Designer",
+    title: "مبین کرم | Web Developer & UX/UI Designer",
     description:
       "Web Developer, PWA Builder, UX/UI & Product Designer - Iran Freelancer",
     images: ["/og-image.jpg"],
@@ -115,11 +115,6 @@ export const metadata: Metadata = {
   },
 
   manifest: "/site.webmanifest",
-
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
-  ],
 
   appleWebApp: {
     capable: true,
@@ -142,7 +137,14 @@ export default function RootLayout({
     <html
       lang="fa"
       dir="rtl"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
+      className={cn(
+        "h-full",
+        "antialiased",
+        geistSans.variable,
+        geistMono.variable,
+        "font-sans",
+        inter.variable,
+      )}
     >
       <head>
         {/* Google tag (gtag.js) */}
@@ -163,7 +165,11 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SiteHeader />
+        <ToastHost />
+        {children}
+      </body>
     </html>
   );
 }
